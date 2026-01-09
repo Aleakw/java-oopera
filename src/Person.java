@@ -1,7 +1,9 @@
 public class Person {
-    String name;
-    String surname;
-    Gender gender;
+
+    // protected
+    protected String name;
+    protected String surname;
+    protected Gender gender;
 
     public Person(String name, String surname, Gender gender) {
         this.name = name;
@@ -17,9 +19,12 @@ public class Person {
         return surname;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
     @Override
     public String toString() {
-        // Для человека: "Имя Фамилия"
         return name + " " + surname;
     }
 }

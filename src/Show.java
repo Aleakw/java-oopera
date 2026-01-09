@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 
 public class Show {
-    String title;
-    int duration;
-    Director director;
-    ArrayList<Actor> listOfActors;
+
+    // prot
+    protected String title;
+    protected int duration;
+    protected Director director;
+    protected ArrayList<Actor> listOfActors;
 
     public Show(String title, int duration, Director director) {
         this.title = title;
@@ -13,12 +15,10 @@ public class Show {
         this.listOfActors = new ArrayList<>();
     }
 
-    // Печать режиссёра (имя + фамилия)
     public void printDirectorInfo() {
         System.out.println("Режиссёр: " + director);
     }
 
-    // Печать актёров
     public void printActors() {
         System.out.println("Актёры спектакля " + title + ":");
 
@@ -32,7 +32,6 @@ public class Show {
         }
     }
 
-    // Добавить актёра + проверка дубля (equals)
     public void addActor(Actor actor) {
         if (listOfActors.contains(actor)) {
             System.out.println("!!!!! Актёр уже добавлен: " + actor);
@@ -41,7 +40,6 @@ public class Show {
         listOfActors.add(actor);
     }
 
-    // Заменить актёра по фамилии
     public void replaceActorBySurname(String surnameToReplace, Actor newActor) {
         for (int i = 0; i < listOfActors.size(); i++) {
             Actor current = listOfActors.get(i);
